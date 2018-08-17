@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
+V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GPIO">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/GPIO/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
+V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚">
+<meta property="og:image" content="https://i.loli.net/2018/08/12/5b6fa1c1c2a52.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/12/5b6fb36ec3850.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/12/5b6fbfe581be7.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b71285a294f4.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b717743e79a6.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b7178791b100.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b717b86a7967.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b718200c53b9.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b718eb4aee27.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b71924662df3.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/13/5b7192b93289e.png">
+<meta property="og:updated_time" content="2018-08-17T06:10:09.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GPIO">
+<meta name="twitter:description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
+V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚">
+<meta name="twitter:image" content="https://i.loli.net/2018/08/12/5b6fa1c1c2a52.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/17/GPIO/"/>
+
+
+
+
+
+  <title>GPIO | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习使我快乐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/GPIO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Engou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GPIO</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T14:04:57+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、GPIO接口的情况"><a href="#一、GPIO接口的情况" class="headerlink" title="一、GPIO接口的情况"></a>一、GPIO接口的情况</h1><h2 id="1、数量与编号"><a href="#1、数量与编号" class="headerlink" title="1、数量与编号"></a>1、数量与编号</h2><p>STM32F103VE-EK中的V储存着该芯片的引脚位数信息</p>
+<p>V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚</p>
+<a id="more"></a>
+<h3 id="1-1-GPIO引脚的组"><a href="#1-1-GPIO引脚的组" class="headerlink" title="1.1 GPIO引脚的组"></a>1.1 GPIO引脚的组</h3><p>从<code>GPIOA</code> 到<code>GPIOG</code> ，总共有<strong>七组</strong> GPIO引脚</p>
+<p>每一组GPIO接口有0——15 <strong>16</strong> 个引脚，需要十分要注意的是<strong>并没有第16号接口</strong></p>
+<p>总结：总共具有7*16=112个GPIO接口</p>
+<p><img src="https://i.loli.net/2018/08/12/5b6fa1c1c2a52.png" alt="引脚图"></p>
+<h2 id="2、功能与性质"><a href="#2、功能与性质" class="headerlink" title="2、功能与性质"></a>2、功能与性质</h2><p>在文件 <a href="https://www.bilibili.com/video/av8938442/?p=10" target="_blank" rel="external">STM32F103RTC.pdf</a>中有关于GPIO引脚的详细说明。现对该表格进行解释</p>
+<p><img src="https://i.loli.net/2018/08/12/5b6fb36ec3850.png" alt="GPIOPIN"></p>
+<p>可以看到该表格总共有6大列</p>
+<h4 id="2-1第一列：Pins-主要表现的是该引脚在不同型号开发板上的序号"><a href="#2-1第一列：Pins-主要表现的是该引脚在不同型号开发板上的序号" class="headerlink" title="2.1第一列：Pins 主要表现的是该引脚在不同型号开发板上的序号"></a>2.1第一列：Pins 主要表现的是该引脚在不同型号开发板上的序号</h4><ul>
+<li>例如所有类型的开发板都有PB4这个引脚，其中，在LQFP144(我的STM32F103VE就是属于这一类)中，这个引脚就是它的第134号引脚</li>
+</ul>
+<h4 id="2-2第二列：Pin-name-这个不用说了，就是引脚的名字"><a href="#2-2第二列：Pin-name-这个不用说了，就是引脚的名字" class="headerlink" title="2.2第二列：Pin name 这个不用说了，就是引脚的名字"></a>2.2第二列：Pin name 这个不用说了，就是引脚的名字</h4><ul>
+<li>例如这个PB4就代表B组GPIO接口的4号(第5号接口)</li>
+</ul>
+<h4 id="2-3-第三列：Type-引脚的类型"><a href="#2-3-第三列：Type-引脚的类型" class="headerlink" title="2.3 第三列：Type 引脚的类型"></a>2.3 第三列：Type 引脚的类型</h4><ul>
+<li>主要也I/O型和S型</li>
+<li>I/O型就是指<strong>I</strong>nput and <strong>O</strong>utput型，即输入输出型</li>
+<li>S型就是指 Supply型，也就是供应型，但具体有什么含义还有待研究</li>
+</ul>
+<h4 id="2-4-第四列：I-O-Level-是否可容忍5v电压"><a href="#2-4-第四列：I-O-Level-是否可容忍5v电压" class="headerlink" title="2.4 第四列：I/O Level 是否可容忍5v电压"></a>2.4 第四列：I/O Level 是否可容忍5v电压</h4><ul>
+<li>具有<code>FT</code> 标识的就是能够容忍5v电压的引脚，其中<code>FT</code> 代表5 (<strong>F</strong>ive)  V <strong>T</strong>olerant</li>
+<li>无此标记的引脚只能最高容忍3.3V的电压</li>
+</ul>
+<h4 id="2-5第五列：Main-functions-引脚的主要功能-通用功能"><a href="#2-5第五列：Main-functions-引脚的主要功能-通用功能" class="headerlink" title="2.5第五列：Main functions 引脚的主要功能(通用功能)"></a>2.5第五列：Main functions 引脚的主要功能(通用功能)</h4><p><strong>即GPIO功能，当做普通的I/O引脚使用。</strong></p>
+<p>复位期间和刚复位后，复用功能未开启，I/O端口被配置成<code>浮空输入模式</code>(CNFx[1:0]=01b，MODEx[1:0]=00b)。 复位后，JTAG引脚被置于<code>输入上拉</code>或<code>下拉模式</code>：</p>
+<ul>
+<li>PA15：JTDI置于上拉模式 </li>
+<li>PA14：JTCK置于下拉模式 </li>
+<li>PA13：JTMS置于上拉模式 </li>
+<li>PB4： JNTRST置于上拉模式</li>
+</ul>
+<p>当作为输出配置时，写到输出数据寄存器上的值(GPIOx_ODR)输出到相应的I/O引脚。可以以推挽模式或开漏模式(当输出0时，只有N-MOS被打开)使用输出驱动器。 </p>
+<p>输入数据寄存器(GPIOx_IDR)在每个APB2时钟周期捕捉I/O引脚上的数据。 </p>
+<p>所有GPIO引脚有一个内部弱上拉和弱下拉，当配置为输入时，它们可以被激活也可以被断开。</p>
+<h4 id="2-6-第六列：Alternate-functions-可选择的功能-复用功能"><a href="#2-6-第六列：Alternate-functions-可选择的功能-复用功能" class="headerlink" title="2.6 第六列：Alternate functions (可选择的功能) 复用功能"></a>2.6 第六列：Alternate functions (可选择的功能) 复用功能</h4><ul>
+<li><p>分为<code>默认(Default)</code>和<code>重映射功能(Remap)</code></p>
+</li>
+<li><p>即片内外设，包括<code>UART</code>、<code>SPI</code>、<code>CAN</code>、<code>I2C</code>等等，开启这些外设的功能，就是使用了系统的复用功能。</p>
+<p>复用功能有两种：没有重映像、重映像（包括部分重映像、完全重映像），使用引脚用作AFIO功能，同样需要对其进行配置。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2018/08/12/5b6fbfe581be7.png" alt="PB4"></p>
+<p>举个例子：在我的144引脚的STM32F103VE中，PB4是第134号引脚，此引脚为I/O(输入输出引脚)，具有容忍5V高压的能力，主要功能是NJTRST，<a href="https://zhidao.baidu.com/question/684409963134390172.html" target="_blank" rel="external">NJTRST是仿真器调试时的JTAG对内核的调试复位信号，一般用于信号调试，建议不要用作他用。</a> 可选功能中的默认功能是SPI3_MISO，其中的重映射功能是PB4 / TIM3_CH1和SPI1_MISO</p>
+<h1 id="二、GPIO的几种模式"><a href="#二、GPIO的几种模式" class="headerlink" title="二、GPIO的几种模式"></a>二、GPIO的几种模式</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line">&#123; </div><div class="line">  GPIO_Mode_AIN = <span class="number">0x0</span>, 					    <span class="comment">/* 模拟输入 */</span></div><div class="line">  GPIO_Mode_IN_FLOATING = <span class="number">0x04</span>,				<span class="comment">/* 输入浮空 */</span></div><div class="line">  GPIO_Mode_IPD = <span class="number">0x28</span>,						<span class="comment">/* 输入下拉 */</span></div><div class="line">  GPIO_Mode_IPU = <span class="number">0x48</span>,						<span class="comment">/* 输入上拉 */</span></div><div class="line">      </div><div class="line">  GPIO_Mode_Out_OD = <span class="number">0x14</span>,					<span class="comment">/* 开漏输出 */</span></div><div class="line">  GPIO_Mode_Out_PP = <span class="number">0x10</span>,					<span class="comment">/* 推挽式输出 */</span></div><div class="line">  GPIO_Mode_AF_OD = <span class="number">0x1C</span>,					<span class="comment">/* 开漏复用 输出 */</span></div><div class="line">  GPIO_Mode_AF_PP = <span class="number">0x18</span>					<span class="comment">/* 推挽式复用 输出 */</span></div><div class="line">&#125;GPIOMode_TypeDef;</div></pre></td></tr></table></figure>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="1-模拟输入-GPIO-Mode-AIN-0x0"><a href="#1-模拟输入-GPIO-Mode-AIN-0x0" class="headerlink" title="1.模拟输入(GPIO_Mode_AIN = 0x0)"></a>1.模拟输入<code>(GPIO_Mode_AIN = 0x0)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b71285a294f4.png" alt="模拟"></p>
+<h4 id="模拟输入：analog-input"><a href="#模拟输入：analog-input" class="headerlink" title="模拟输入：analog input"></a><strong>模拟输入</strong>：<strong>a</strong>nalog <strong>in</strong>put</h4><p>这个好理解，就是可以输入电压而非电平，输入的并非是0或1而是一个具体的电压值</p>
+<h3 id="2-浮空输入-GPIO-Mode-IN-FLOATING-0x04"><a href="#2-浮空输入-GPIO-Mode-IN-FLOATING-0x04" class="headerlink" title="2.浮空输入(GPIO_Mode_IN_FLOATING = 0x04)"></a>2.浮空输入<code>(GPIO_Mode_IN_FLOATING = 0x04)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b717743e79a6.png" alt="浮空"></p>
+<h4 id="浮空输入：floating-input"><a href="#浮空输入：floating-input" class="headerlink" title="浮空输入：floating input"></a><strong>浮空输入</strong>：<strong>floating</strong> <strong>in</strong>put</h4><p>由于浮空输入<strong>一般多用于外部按键输入</strong>，结合图上的输入部分电路，我理解为浮空输入状态下，IO的电平状态是不确定的，完全由外部输入决定，如果在该引脚悬空的情况下，读取该端口的电平是不确定的。[<a href="https://baike.baidu.com/item/%E4%B8%8A%E6%8B%89%E7%94%B5%E9%98%BB/6810953?fr=aladdin#ref_[1]_1106477" target="_blank" rel="external">来源</a>] </p>
+<h3 id="3-输入下拉-GPIO-Mode-IPD-0x28"><a href="#3-输入下拉-GPIO-Mode-IPD-0x28" class="headerlink" title="3.输入下拉(GPIO_Mode_IPD = 0x28)"></a>3.输入下拉<code>(GPIO_Mode_IPD = 0x28)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b7178791b100.png" alt="输入下拉"></p>
+<h4 id="输入下拉：input-down"><a href="#输入下拉：input-down" class="headerlink" title="输入下拉：input down"></a><strong>输入下拉</strong>：<strong>in</strong>put <strong>d</strong>own</h4><p>下拉电阻的主要作用是与上接电阻一起在电路驱动器关闭时给线路（节点）以一个固定的电平。[<a href="https://baike.baidu.com/item/%E4%B8%8B%E6%8B%89%E7%94%B5%E9%98%BB" target="_blank" rel="external">来源</a>] </p>
+<p>同样还有下拉电阻它是为了保证无信号输入时输入端的电平为低电平。 [<a href="https://zhidao.baidu.com/question/332306095850748645.html" target="_blank" rel="external">来源</a>]</p>
+<h3 id="4-输入上拉-GPIO-Mode-IPU-0x48"><a href="#4-输入上拉-GPIO-Mode-IPU-0x48" class="headerlink" title="4.输入上拉(GPIO_Mode_IPU =0x48)"></a>4.输入上拉<code>(GPIO_Mode_IPU =0x48)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b717b86a7967.png" alt="输入上拉"></p>
+<h4 id="输入上拉：input-up"><a href="#输入上拉：input-up" class="headerlink" title="输入上拉：input up"></a><strong>输入上拉</strong>：<strong>in</strong>put <strong>u</strong>p</h4><p>在上拉电阻所连接的导线上，如果<code>外部组件</code><strong>未启用</strong>，上拉电阻则“微弱地”将输入电压信号“<strong>拉高</strong>”。当外部组件<strong>未连接</strong>时，对输入端来说，外部“看上去”就是高阻抗的。这时，通过上拉电阻可以将<code>输入端口处的电压</code><strong>拉高到高电平</strong>。如果外部组件<strong>启用</strong>，它将<strong><em>取消上拉电阻所设置的高电平</em> </strong>。通过这样，上拉电阻可以使<code>引脚</code>即使在<strong>未连接外部组件</strong>的时候也能<strong>保持确定的逻辑电平</strong>。 [<a href="https://baike.baidu.com/item/%E4%B8%8A%E6%8B%89%E7%94%B5%E9%98%BB/6810953?fr=aladdin#ref_[1]_1106477" target="_blank" rel="external">来源</a>]</p>
+<p>上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平。而在信号输入为低电平是输入端的电平应该也为低电平。如果没有上拉电阻，在没有外界输入的情况下输入端是悬空的，它的电平是未知的无法保证的，上拉电阻就是为了保证无信号输入时输入端的电平为高电平，同样还有下拉电阻它是为了保证无信号输入时输入端的电平为低电平。[<a href="https://zhidao.baidu.com/question/332306095850748645.html" target="_blank" rel="external">来源</a>]</p>
+<h2 id="输出-较少用"><a href="#输出-较少用" class="headerlink" title="输出(较少用)"></a>输出(较少用)</h2><h3 id="1-开漏输出-GPIO-Mode-Out-OD-0x14"><a href="#1-开漏输出-GPIO-Mode-Out-OD-0x14" class="headerlink" title="1.开漏输出(GPIO_Mode_Out_OD = 0x14)"></a>1.开漏输出<code>(GPIO_Mode_Out_OD = 0x14)</code></h3><h4 id="开漏输出：output-drain"><a href="#开漏输出：output-drain" class="headerlink" title="开漏输出：output drain"></a>开漏输出：<strong>o</strong>utput <strong>d</strong>rain</h4><p><img src="https://i.loli.net/2018/08/13/5b718200c53b9.png" alt="开漏输出"></p>
+<h4 id="开漏输出：Open-Drain-Output"><a href="#开漏输出：Open-Drain-Output" class="headerlink" title="开漏输出：Open-Drain Output"></a><strong>开漏输出</strong>：<strong>O</strong>pen-<strong>D</strong>rain Output</h4><p>开漏输出就是不输出电压，低电平时接地，高电平时不接地。如果外接上拉电阻，则在输出高电平时电压会拉到上拉电阻的电源电压。这种方式适合在连接的外设电压比单片机电压低的时候。 [<a href="https://baike.baidu.com/item/%E5%BC%80%E6%BC%8F%E8%BE%93%E5%87%BA/9644177" target="_blank" rel="external">来源</a>]</p>
+<p>可以输出高，低电平，连接数字器件。推挽结构一般是指两个三极管分别受两互补信号的控制，总是在一个三极管导通的时候另一个截止。高低电平由IC的电源低定。推挽电路是两个参数相同的三极管或MOSFET，以推挽方式存在于电路中，各负责正负半周的波形放大任务，电路工作时，两只对称的功率开关管每次只有一个导通，所以导通损耗小、效率高。输出既可以向负载灌电流，也可以从负载抽取电流。[<a href="http://www.360doc.com/content/15/0113/16/20337528_440450286.shtml" target="_blank" rel="external">来源</a>]</p>
+<h3 id="2-推挽式输出-GPIO-Mode-Out-PP-0x10"><a href="#2-推挽式输出-GPIO-Mode-Out-PP-0x10" class="headerlink" title="2.推挽式输出(GPIO_Mode_Out_PP = 0x10)"></a>2.推挽式输出<code>(GPIO_Mode_Out_PP = 0x10)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b718eb4aee27.png" alt="推挽式输出"></p>
+<h4 id="推挽式输出：push-pull-output"><a href="#推挽式输出：push-pull-output" class="headerlink" title="推挽式输出：push-pull output"></a>推挽式输出：<strong>p</strong>ush-<strong>p</strong>ull output</h4><p><strong>注意：推挽式输出与开漏输出的区别只有在接Vdd的P-MOS</strong></p>
+<p>可以输出高,低电平,连接数字器件;推挽结构一般是指两个三极管分别受两互补信号的控制,总是在一个三极管导通的时候另一个截止 [<a href="https://baike.baidu.com/item/%E6%8E%A8%E6%8C%BD%E8%BE%93%E5%87%BA?fromtitle=%E6%8E%A8%E6%8C%BD%E5%BC%8F%E8%BE%93%E5%87%BA&amp;fromid=2725066" target="_blank" rel="external">来源</a>]</p>
+<p>推挽模式，有外接上拉电阻时， 逻辑1， 上拉电阻两端电压都是3.3V，PIN输出为高电平。 [<a href="http://www.eeworld.com.cn/mcu/article_2017092734789.html" target="_blank" rel="external">来源</a>]</p>
+<h3 id="3-开漏复用输出GPIO-Mode-AF-OD-0x1C"><a href="#3-开漏复用输出GPIO-Mode-AF-OD-0x1C" class="headerlink" title="3.开漏复用输出GPIO_Mode_AF_OD = 0x1C"></a>3.开漏复用输出<code>GPIO_Mode_AF_OD = 0x1C</code></h3><p><img src="https://i.loli.net/2018/08/13/5b71924662df3.png" alt="开漏复用输出"></p>
+<h4 id="开漏复用输出：Axx-function-of-output-drain"><a href="#开漏复用输出：Axx-function-of-output-drain" class="headerlink" title="开漏复用输出：Axx function of output drain"></a><strong>开漏复用输出</strong>：Axx function of output drain</h4><p>可以理解为GPIO口被用作第二功能时的配置情况（即并非作为通用IO口使用）。 [<a href="https://blog.csdn.net/bailyzheng/article/details/8071864" target="_blank" rel="external">来源</a>]</p>
+<h3 id="4-推挽复用输出-GPIO-Mode-AF-PP-0x18"><a href="#4-推挽复用输出-GPIO-Mode-AF-PP-0x18" class="headerlink" title="4.推挽复用输出 GPIO_Mode_AF_PP = 0x18"></a>4.推挽复用输出 <code>GPIO_Mode_AF_PP = 0x18</code></h3><p><img src="https://i.loli.net/2018/08/13/5b7192b93289e.png" alt="推挽复用"></p>
+<h4 id="推挽复用输出：Axx-function-of-push-pull"><a href="#推挽复用输出：Axx-function-of-push-pull" class="headerlink" title="推挽复用输出：Axx function of push-pull"></a><strong>推挽复用输出</strong>：Axx function of push-pull</h4><p>同上</p>
+<p>[<a href="https://blog.csdn.net/lostand/article/details/70052918" target="_blank" rel="external">关于开漏与推挽输出的区别的高级介绍</a>]</p>
+<p>[<a href="https://blog.csdn.net/bailyzheng/article/details/8071864" target="_blank" rel="external">更多关于GPIO功能的介绍</a>]</p>
+<h2 id="三、GPIO接口的初始化"><a href="#三、GPIO接口的初始化" class="headerlink" title="三、GPIO接口的初始化"></a>三、GPIO接口的初始化</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/日记/" rel="next" title="日记">
+                <i class="fa fa-chevron-left"></i> 日记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/1.jpg"
+                alt="Engou" />
+            
+              <p class="site-author-name" itemprop="name">Engou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、GPIO接口的情况"><span class="nav-number">1.</span> <span class="nav-text">一、GPIO接口的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、数量与编号"><span class="nav-number">1.1.</span> <span class="nav-text">1、数量与编号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-GPIO引脚的组"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 GPIO引脚的组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、功能与性质"><span class="nav-number">1.2.</span> <span class="nav-text">2、功能与性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1第一列：Pins-主要表现的是该引脚在不同型号开发板上的序号"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">2.1第一列：Pins 主要表现的是该引脚在不同型号开发板上的序号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2第二列：Pin-name-这个不用说了，就是引脚的名字"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.2第二列：Pin name 这个不用说了，就是引脚的名字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-第三列：Type-引脚的类型"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">2.3 第三列：Type 引脚的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-第四列：I-O-Level-是否可容忍5v电压"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">2.4 第四列：I/O Level 是否可容忍5v电压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5第五列：Main-functions-引脚的主要功能-通用功能"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">2.5第五列：Main functions 引脚的主要功能(通用功能)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-第六列：Alternate-functions-可选择的功能-复用功能"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">2.6 第六列：Alternate functions (可选择的功能) 复用功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、GPIO的几种模式"><span class="nav-number">2.</span> <span class="nav-text">二、GPIO的几种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">2.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-模拟输入-GPIO-Mode-AIN-0x0"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.模拟输入(GPIO_Mode_AIN = 0x0)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟输入：analog-input"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">模拟输入：analog input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浮空输入-GPIO-Mode-IN-FLOATING-0x04"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.浮空输入(GPIO_Mode_IN_FLOATING = 0x04)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮空输入：floating-input"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">浮空输入：floating input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-输入下拉-GPIO-Mode-IPD-0x28"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.输入下拉(GPIO_Mode_IPD = 0x28)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入下拉：input-down"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">输入下拉：input down</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-输入上拉-GPIO-Mode-IPU-0x48"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.输入上拉(GPIO_Mode_IPU =0x48)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入上拉：input-up"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">输入上拉：input up</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出-较少用"><span class="nav-number">2.2.</span> <span class="nav-text">输出(较少用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-开漏输出-GPIO-Mode-Out-OD-0x14"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.开漏输出(GPIO_Mode_Out_OD = 0x14)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：output-drain"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">开漏输出：output drain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：Open-Drain-Output"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">开漏输出：Open-Drain Output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-推挽式输出-GPIO-Mode-Out-PP-0x10"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.推挽式输出(GPIO_Mode_Out_PP = 0x10)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽式输出：push-pull-output"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">推挽式输出：push-pull output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-开漏复用输出GPIO-Mode-AF-OD-0x1C"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.开漏复用输出GPIO_Mode_AF_OD = 0x1C</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏复用输出：Axx-function-of-output-drain"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">开漏复用输出：Axx function of output drain</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-推挽复用输出-GPIO-Mode-AF-PP-0x18"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.推挽复用输出 GPIO_Mode_AF_PP = 0x18</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽复用输出：Axx-function-of-push-pull"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">推挽复用输出：Axx function of push-pull</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、GPIO接口的初始化"><span class="nav-number">2.3.</span> <span class="nav-text">三、GPIO接口的初始化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Engou</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共5.2k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
