@@ -82,7 +82,7 @@
 <meta name="description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
 V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GPIO的硬件情况与软件配置">
+<meta property="og:title" content="我的博客">
 <meta property="og:url" content="http://yoursite.com/2018/08/17/GPIO/index.html">
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
@@ -98,9 +98,9 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
 <meta property="og:image" content="https://i.loli.net/2018/08/13/5b718eb4aee27.png">
 <meta property="og:image" content="https://i.loli.net/2018/08/13/5b71924662df3.png">
 <meta property="og:image" content="https://i.loli.net/2018/08/13/5b7192b93289e.png">
-<meta property="og:updated_time" content="2018-08-18T02:57:56.509Z">
+<meta property="og:updated_time" content="2018-08-18T09:16:36.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GPIO的硬件情况与软件配置">
+<meta name="twitter:title" content="我的博客">
 <meta name="twitter:description" content="一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
 V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚">
 <meta name="twitter:image" content="https://i.loli.net/2018/08/12/5b6fa1c1c2a52.png">
@@ -139,7 +139,7 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
 
 
 
-  <title>GPIO的硬件情况与软件配置 | 我的博客</title>
+  <title> | 我的博客</title>
   
 
 
@@ -317,7 +317,7 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
 
         
         
-          <h1 class="post-title" itemprop="name headline">GPIO的硬件情况与软件配置</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -458,7 +458,78 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
 <h4 id="推挽复用输出：Alternate-function-of-push-pull"><a href="#推挽复用输出：Alternate-function-of-push-pull" class="headerlink" title="推挽复用输出：Alternate-function of push-pull"></a><strong>推挽复用输出</strong>：Alternate-function of push-pull</h4><p>同上</p>
 <p>[<a href="https://blog.csdn.net/lostand/article/details/70052918" target="_blank" rel="external">关于开漏与推挽输出的区别的高级介绍</a>]</p>
 <p>[<a href="https://blog.csdn.net/bailyzheng/article/details/8071864" target="_blank" rel="external">更多关于GPIO功能的介绍</a>]</p>
-<h2 id="三、GPIO接口的初始化"><a href="#三、GPIO接口的初始化" class="headerlink" title="三、GPIO接口的初始化"></a>三、GPIO接口的初始化</h2>
+<h2 id="三、GPIO接口的配置"><a href="#三、GPIO接口的配置" class="headerlink" title="三、GPIO接口的配置"></a>三、GPIO接口的配置</h2><p><strong>配置的主要过程有 </strong></p>
+<blockquote>
+<ul>
+<li><p>配置时钟并使能</p>
+</li>
+<li><p>配置结构体</p>
+</li>
+<li><p>最后调用库函数初始化GPIO </p>
+</li>
+</ul>
+</blockquote>
+<h4 id="3-1-配置时钟并使能"><a href="#3-1-配置时钟并使能" class="headerlink" title="3.1 配置时钟并使能"></a>3.1 配置时钟并使能</h4><p>使用函数</p>
+<blockquote>
+<p>RCC_APB2PeriphClockCmd();</p>
+</blockquote>
+<p>该函数有两个形参，一个用来指明所要操作时钟的名称，一个选择开启还是关闭</p>
+<p>这个函数的时钟有以下的选项可选</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">RCC_APB2Periph_AFIO              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000001</span>)</div><div class="line">RCC_APB2Periph_GPIOA             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000004</span>)</div><div class="line">RCC_APB2Periph_GPIOB             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000008</span>)</div><div class="line">RCC_APB2Periph_GPIOC             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000010</span>)</div><div class="line">RCC_APB2Periph_GPIOD             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000020</span>)</div><div class="line">RCC_APB2Periph_GPIOE             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000040</span>)</div><div class="line">RCC_APB2Periph_GPIOF             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000080</span>)</div><div class="line">RCC_APB2Periph_GPIOG             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000100</span>)</div><div class="line">RCC_APB2Periph_ADC1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000200</span>)</div><div class="line">RCC_APB2Periph_ADC2              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000400</span>)</div><div class="line">RCC_APB2Periph_TIM1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000800</span>)</div><div class="line">RCC_APB2Periph_SPI1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00001000</span>)</div><div class="line">RCC_APB2Periph_TIM8              ((<span class="keyword">uint32_t</span>)<span class="number">0x00002000</span>)</div><div class="line">RCC_APB2Periph_USART1            ((<span class="keyword">uint32_t</span>)<span class="number">0x00004000</span>)</div><div class="line">RCC_APB2Periph_ADC3              ((<span class="keyword">uint32_t</span>)<span class="number">0x00008000</span>)</div><div class="line">RCC_APB2Periph_TIM15             ((<span class="keyword">uint32_t</span>)<span class="number">0x00010000</span>)</div><div class="line">RCC_APB2Periph_TIM16             ((<span class="keyword">uint32_t</span>)<span class="number">0x00020000</span>)</div><div class="line">RCC_APB2Periph_TIM17             ((<span class="keyword">uint32_t</span>)<span class="number">0x00040000</span>)</div><div class="line">RCC_APB2Periph_TIM9              ((<span class="keyword">uint32_t</span>)<span class="number">0x00080000</span>)</div><div class="line">RCC_APB2Periph_TIM10             ((<span class="keyword">uint32_t</span>)<span class="number">0x00100000</span>)</div><div class="line">RCC_APB2Periph_TIM11             ((<span class="keyword">uint32_t</span>)<span class="number">0x00200000</span>)</div></pre></td></tr></table></figure>
+<p>第二项状态有ENABLE和DISABLE可选</p>
+<h4 id="3-2选择引脚"><a href="#3-2选择引脚" class="headerlink" title="3.2选择引脚"></a>3.2选择引脚</h4><h5 id="3-2-1先定义一个结构体"><a href="#3-2-1先定义一个结构体" class="headerlink" title="3.2.1先定义一个结构体"></a>3.2.1先定义一个结构体</h5><p><code>GPIO_InitTypeDef GPIO_InitStructure;</code> </p>
+<p>我们到stm32f10x_gpio.h中可以看到，ST官方的库函数对这个结构体的定义是这样的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">uint16_t</span> GPIO_Pin;           </div><div class="line">  GPIOSpeed_TypeDef GPIO_Speed;  </div><div class="line">  GPIOMode_TypeDef GPIO_Mode;    </div><div class="line">&#125; GPIO_InitTypeDef;</div></pre></td></tr></table></figure>
+<p>可见该结构体主要有这个内容：</p>
+<blockquote>
+<p>GPIO_Pin：GPIO引脚，用来指引对某个IO接口进行操作</p>
+<p>GPIOSpeed：GPIO引脚的速度，调速度，但是暂时不知道这个速度意味着什么</p>
+<p>GPIO_Mode：GPIO引脚的模式，8种模式，上文已经介绍过了</p>
+</blockquote>
+<p>有关于GPIO引脚的翻转速度有以下取值：</p>
+<blockquote>
+<p>GPIO_Speed_10MHz<br>GPIO_Speed_2MHz<br>GPIO_Speed_50MHz</p>
+</blockquote>
+<h5 id="3-2-2-初始化结构的值"><a href="#3-2-2-初始化结构的值" class="headerlink" title="3.2.2 初始化结构的值"></a>3.2.2 初始化结构的值</h5><p>就是分别对引脚、速度、模式经行初值赋值，比如说</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GPIO_initTypeDef GPIO_initStructures;</div><div class="line">GPIO_initStructures.GPIO_Pin=GPIO_Pin_8;</div><div class="line">GPIO_initStructues.GPIO_Speed=GPIO_Speed_50MHz;</div><div class="line">GPIO_initStructures.GPIO_Mode=GPIO_Mode_OUT_PP;</div></pre></td></tr></table></figure>
+<h4 id="3-3-初始化GPIO"><a href="#3-3-初始化GPIO" class="headerlink" title="3.3 初始化GPIO"></a>3.3 初始化GPIO</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</div></pre></td></tr></table></figure>
+<p>其中的GPIOX是指引脚组名，比如说GPIOA</p>
+<h3 id="四、GPIO接口的使用"><a href="#四、GPIO接口的使用" class="headerlink" title="四、GPIO接口的使用"></a>四、GPIO接口的使用</h3><p>GPIO_SetBits 寄存器：BSRR </p>
+<p>GPIO_ResetBits 寄存器：BRR</p>
+<p>GPIO_WriteBit 寄存器：BSRR BRR </p>
+<p>GPIO_Write 寄存器：ODR </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th>寄存器</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GPIO_SetBits</td>
+<td>BSRR</td>
+<td>置某一个引脚为高电平</td>
+</tr>
+<tr>
+<td style="text-align:left">GPIO_ResetBits</td>
+<td>BRR</td>
+<td>置某一个引脚为低电平</td>
+</tr>
+<tr>
+<td style="text-align:left">GPIO_WriteBit</td>
+<td>BSRR BRR</td>
+<td>单个置0或1</td>
+</tr>
+<tr>
+<td style="text-align:left">GPIO_Write</td>
+<td>ODR</td>
+<td>一次给多个引脚赋值，注意是16位的</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -660,7 +731,7 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、GPIO接口的情况"><span class="nav-number">1.</span> <span class="nav-text">一、GPIO接口的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、数量与编号"><span class="nav-number">1.1.</span> <span class="nav-text">1、数量与编号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-GPIO引脚的组"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 GPIO引脚的组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、功能与性质"><span class="nav-number">1.2.</span> <span class="nav-text">2、功能与性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1第一列：Pins-主要表现的是该引脚在不同型号开发板上的序号"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">2.1第一列：Pins 主要表现的是该引脚在不同型号开发板上的序号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2第二列：Pin-name-这个不用说了，就是引脚的名字"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.2第二列：Pin name 这个不用说了，就是引脚的名字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-第三列：Type-引脚的类型"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">2.3 第三列：Type 引脚的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-第四列：I-O-Level-是否可容忍5v电压"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">2.4 第四列：I/O Level 是否可容忍5v电压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5第五列：Main-functions-引脚的主要功能-通用功能"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">2.5第五列：Main functions 引脚的主要功能(通用功能)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-第六列：Alternate-functions-可选择的功能-复用功能"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">2.6 第六列：Alternate functions (可选择的功能) 复用功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、GPIO的几种模式"><span class="nav-number">2.</span> <span class="nav-text">二、GPIO的几种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">2.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-模拟输入-GPIO-Mode-AIN-0x0"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.模拟输入(GPIO_Mode_AIN = 0x0)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟输入：analog-input"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">模拟输入：analog input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浮空输入-GPIO-Mode-IN-FLOATING-0x04"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.浮空输入(GPIO_Mode_IN_FLOATING = 0x04)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮空输入：floating-input"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">浮空输入：floating input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-输入下拉-GPIO-Mode-IPD-0x28"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.输入下拉(GPIO_Mode_IPD = 0x28)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入下拉：input-down"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">输入下拉：input down</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-输入上拉-GPIO-Mode-IPU-0x48"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.输入上拉(GPIO_Mode_IPU =0x48)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入上拉：input-up"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">输入上拉：input up</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出-较少用"><span class="nav-number">2.2.</span> <span class="nav-text">输出(较少用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-开漏输出-GPIO-Mode-Out-OD-0x14"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.开漏输出(GPIO_Mode_Out_OD = 0x14)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：output-drain"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">开漏输出：output drain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：Open-Drain-Output"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">开漏输出：Open-Drain Output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-推挽式输出-GPIO-Mode-Out-PP-0x10"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.推挽式输出(GPIO_Mode_Out_PP = 0x10)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽式输出：push-pull-output"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">推挽式输出：push-pull output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-开漏复用输出GPIO-Mode-AF-OD-0x1C"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.开漏复用输出GPIO_Mode_AF_OD = 0x1C</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏复用输出：Alternate-function-of-output-drain"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">开漏复用输出：Alternate-function of output drain</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-推挽复用输出-GPIO-Mode-AF-PP-0x18"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.推挽复用输出 GPIO_Mode_AF_PP = 0x18</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽复用输出：Alternate-function-of-push-pull"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">推挽复用输出：Alternate-function of push-pull</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、GPIO接口的初始化"><span class="nav-number">2.3.</span> <span class="nav-text">三、GPIO接口的初始化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、GPIO接口的情况"><span class="nav-number">1.</span> <span class="nav-text">一、GPIO接口的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、数量与编号"><span class="nav-number">1.1.</span> <span class="nav-text">1、数量与编号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-GPIO引脚的组"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 GPIO引脚的组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、功能与性质"><span class="nav-number">1.2.</span> <span class="nav-text">2、功能与性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1第一列：Pins-主要表现的是该引脚在不同型号开发板上的序号"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">2.1第一列：Pins 主要表现的是该引脚在不同型号开发板上的序号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2第二列：Pin-name-这个不用说了，就是引脚的名字"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.2第二列：Pin name 这个不用说了，就是引脚的名字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-第三列：Type-引脚的类型"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">2.3 第三列：Type 引脚的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-第四列：I-O-Level-是否可容忍5v电压"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">2.4 第四列：I/O Level 是否可容忍5v电压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5第五列：Main-functions-引脚的主要功能-通用功能"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">2.5第五列：Main functions 引脚的主要功能(通用功能)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-第六列：Alternate-functions-可选择的功能-复用功能"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">2.6 第六列：Alternate functions (可选择的功能) 复用功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、GPIO的几种模式"><span class="nav-number">2.</span> <span class="nav-text">二、GPIO的几种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">2.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-模拟输入-GPIO-Mode-AIN-0x0"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.模拟输入(GPIO_Mode_AIN = 0x0)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟输入：analog-input"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">模拟输入：analog input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浮空输入-GPIO-Mode-IN-FLOATING-0x04"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.浮空输入(GPIO_Mode_IN_FLOATING = 0x04)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮空输入：floating-input"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">浮空输入：floating input</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-输入下拉-GPIO-Mode-IPD-0x28"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.输入下拉(GPIO_Mode_IPD = 0x28)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入下拉：input-down"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">输入下拉：input down</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-输入上拉-GPIO-Mode-IPU-0x48"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.输入上拉(GPIO_Mode_IPU =0x48)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入上拉：input-up"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">输入上拉：input up</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出-较少用"><span class="nav-number">2.2.</span> <span class="nav-text">输出(较少用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-开漏输出-GPIO-Mode-Out-OD-0x14"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.开漏输出(GPIO_Mode_Out_OD = 0x14)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：output-drain"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">开漏输出：output drain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏输出：Open-Drain-Output"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">开漏输出：Open-Drain Output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-推挽式输出-GPIO-Mode-Out-PP-0x10"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.推挽式输出(GPIO_Mode_Out_PP = 0x10)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽式输出：push-pull-output"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">推挽式输出：push-pull output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-开漏复用输出GPIO-Mode-AF-OD-0x1C"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.开漏复用输出GPIO_Mode_AF_OD = 0x1C</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开漏复用输出：Alternate-function-of-output-drain"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">开漏复用输出：Alternate-function of output drain</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-推挽复用输出-GPIO-Mode-AF-PP-0x18"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.推挽复用输出 GPIO_Mode_AF_PP = 0x18</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#推挽复用输出：Alternate-function-of-push-pull"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">推挽复用输出：Alternate-function of push-pull</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、GPIO接口的配置"><span class="nav-number">2.3.</span> <span class="nav-text">三、GPIO接口的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-配置时钟并使能"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">3.1 配置时钟并使能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2选择引脚"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">3.2选择引脚</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-1先定义一个结构体"><span class="nav-number">2.3.0.2.1.</span> <span class="nav-text">3.2.1先定义一个结构体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-2-初始化结构的值"><span class="nav-number">2.3.0.2.2.</span> <span class="nav-text">3.2.2 初始化结构的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-初始化GPIO"><span class="nav-number">2.3.0.3.</span> <span class="nav-text">3.3 初始化GPIO</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、GPIO接口的使用"><span class="nav-number">2.3.1.</span> <span class="nav-text">四、GPIO接口的使用</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -711,7 +782,7 @@ V代表本开发板有144个引脚，但需要注意的是，这144个引脚并�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.3k字</span>
+  <span class="post-count">博客全站共7.7k字</span>
 </div>
         
 
