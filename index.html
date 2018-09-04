@@ -374,50 +374,15 @@
 
       
         
-          
-            <h1 id="第一篇-总论和电阻电路的分析"><a href="#第一篇-总论和电阻电路的分析" class="headerlink" title="第一篇    总论和电阻电路的分析"></a>第一篇    总论和电阻电路的分析</h1><h2 id="集总参数电路中的电流、电压的约束关系"><a href="#集总参数电路中的电流、电压的约束关系" class="headerlink" title="集总参数电路中的电流、电压的约束关系"></a>集总参数电路中的电流、电压的约束关系</h2><h3 id="1-1-电路及集总电路模型"><a href="#1-1-电路及集总电路模型" class="headerlink" title="1-1 电路及集总电路模型"></a>1-1 电路及集总电路模型</h3><p><strong>1.集总电路：由电阻、电容、电感等集总参数元件组成的电路称为集总电路</strong></p>
+          <h1 id="第一篇-总论和电阻电路的分析"><a href="#第一篇-总论和电阻电路的分析" class="headerlink" title="第一篇    总论和电阻电路的分析"></a>第一篇    总论和电阻电路的分析</h1><h2 id="集总参数电路中的电流、电压的约束关系"><a href="#集总参数电路中的电流、电压的约束关系" class="headerlink" title="集总参数电路中的电流、电压的约束关系"></a>集总参数电路中的电流、电压的约束关系</h2><h3 id="1-1-电路及集总电路模型"><a href="#1-1-电路及集总电路模型" class="headerlink" title="1-1 电路及集总电路模型"></a>1-1 电路及集总电路模型</h3><p><strong>1.集总电路：由电阻、电容、电感等集总参数元件组成的电路称为集总电路</strong></p>
 <p>注意：课本<strong>第一篇</strong>所讨论的集总电路是指只由电阻元件和电源元件组成的<code>电阻电路</code>，本书其它篇还会讨论集总电路的另一个类别：<code>动态电路</code>。</p>
-<p><strong>2.当实际的电路尺寸远小于使用时最高工作频率所对应的波长时，可以用几种集总电路元件构成实际部、器件，即可以被称为集总电路。</strong></p>
-<h3 id="1-2电路变量-电流、电压及功率"><a href="#1-2电路变量-电流、电压及功率" class="headerlink" title="1-2电路变量 电流、电压及功率"></a>1-2电路变量 电流、电压及功率</h3><h4 id="1-电流"><a href="#1-电流" class="headerlink" title="1.电流"></a>1.电流</h4><p>定义：单位时间通过导体横截面的电荷量，用<code>i</code>来表示</p>
-<script type="math/tex; mode=display">
-ⅈ(t)=\frac{\mathrm{d}q}{\mathrm{d}t}</script><h5 id="1-电流的分类"><a href="#1-电流的分类" class="headerlink" title="1.电流的分类"></a>1.电流的分类</h5><ol>
-<li>恒定电流：大小和方向都不会发生变化的电流 <code>direct current</code>[DC]</li>
-<li>时变电流：非恒定电流  <code>time varying current</code></li>
-<li>交变电流：大小和方向都以周期性变化的电流 <code>alternating current</code>[AC]</li>
-</ol>
-<h5 id="2-电流的参考方向"><a href="#2-电流的参考方向" class="headerlink" title="2.电流的参考方向"></a>2.电流的参考方向</h5><p>参考方向 <code>reference direction</code>：为了在复杂电路中事先确定电流的方向</p>
-<ul>
-<li>参考方向可以随意设定，但一旦设定将无法更改</li>
-<li>与参考方向相同的电流取正，与参考方向相反的电流取负</li>
-</ul>
-<h4 id="2-电压"><a href="#2-电压" class="headerlink" title="2.电压"></a>2.电压</h4><p>定义：电压又叫做点位差，a点与b点之间的电位差等于单位电荷从a点移动到b点所失去的能量</p>
-<script type="math/tex; mode=display">
-u(t)=\frac{\mathrm{d}w}{\mathrm{d}q}</script><h5 id="1-电压的分类"><a href="#1-电压的分类" class="headerlink" title="1.电压的分类"></a>1.电压的分类</h5><ol>
-<li>直流电压/恒定电压：大小和方向都不会发生变化的电压 </li>
-<li>时变电压：电压的大小和极性都随时间变化</li>
-<li>交流电流：电压的大小和极性随时间周期性变化</li>
-</ol>
-<h5 id="2-电压的极性"><a href="#2-电压的极性" class="headerlink" title="2.电压的极性"></a>2.电压的极性</h5><p>参考极性 <code>reference polarity[待考证]</code>：为了在复杂电路中事先确定电压的方向</p>
-<ul>
-<li>参考极性可以随意设定，但一旦设定将无法更改</li>
-<li>与参考极性相同的电压取正，与参考极性相反的电压取负与参考方向相同的电流取正，与参考方向相反的电流取负</li>
-</ul>
-<h4 id="3-功率"><a href="#3-功率" class="headerlink" title="3. 功率"></a>3. 功率</h4><p>定义：电路中某一段所吸收或提供能量的速率</p>
-<script type="math/tex; mode=display">
-\mathrm{d}w=u\mathrm{d}q</script><script type="math/tex; mode=display">
-p(t)=\frac{\mathrm{d}w}{\mathrm{d}t}=\frac{u\mathrm{d}q}{\mathrm{d}t}</script><script type="math/tex; mode=display">
-i(t)=\frac{\mathrm{d}q}{\mathrm{d}t}</script><script type="math/tex; mode=display">
-\frac{p(t)}{i(t)}=u(t)</script><script type="math/tex; mode=display">
-p(t)=i(t)×u(t)</script><h5 id="1-功率的方向"><a href="#1-功率的方向" class="headerlink" title="1.功率的方向"></a>1.功率的方向</h5><p>参考方向：为了在复杂电路中事先确定功率的方向</p>
-<p>人们把能量流动的方向称为功率的方向</p>
-<ul>
-<li>功率的参考方向可以随意设定，但一旦设定将无法更改</li>
-<li>与功率的参考方向相同时，功率取正，反之取负</li>
-</ul>
-<h4 id="4-关联与非关联"><a href="#4-关联与非关联" class="headerlink" title="4.关联与非关联"></a>4.关联与非关联</h4><h5 id="1-电流与电压的关联"><a href="#1-电流与电压的关联" class="headerlink" title="1.电流与电压的关联"></a>1.电流与电压的关联</h5><p>定义：当电流的参考方向与电压的<code>+</code>到<code>-</code>的方向相同时，成电流与电压关联，否则为非关联</p>
-<p><strong>注意</strong> ：电流与电压一般是关联参考方向，所以在画集总电路时只需画电流参考方向或电压参考极性</p>
-<h5 id="2-电流、电压、功率的关联"><a href="#2-电流、电压、功率的关联" class="headerlink" title="2.电流、电压、功率的关联"></a>2.电流、电压、功率的关联</h5>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/04/电路分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
