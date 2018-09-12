@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="STM32," />
 
 
 
@@ -79,12 +79,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="4×4矩阵按键一、概述4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。
+二、原理
+可以看到，矩阵键盘的原理十分简单，它有8个接口，5到8控制行，1到4控制列，它具体的工作方式是这样的：
+假设第5个串口所连接的IO口具有高电平的状态，当S15被按下时，从5到2的电路将被接通，此">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵按键">
+<meta property="og:url" content="http://yoursite.com/2018/09/12/矩阵按键/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="4×4矩阵按键一、概述4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。
+二、原理
+可以看到，矩阵键盘的原理十分简单，它有8个接口，5到8控制行，1到4控制列，它具体的工作方式是这样的：
+假设第5个串口所连接的IO口具有高电平的状态，当S15被按下时，从5到2的电路将被接通，此">
+<meta property="og:image" content="https://i.loli.net/2018/09/10/5b964caaafd58.jpg">
+<meta property="og:updated_time" content="2018-09-12T12:13:45.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
+<meta name="twitter:title" content="矩阵按键">
+<meta name="twitter:description" content="4×4矩阵按键一、概述4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。
+二、原理
+可以看到，矩阵键盘的原理十分简单，它有8个接口，5到8控制行，1到4控制列，它具体的工作方式是这样的：
+假设第5个串口所连接的IO口具有高电平的状态，当S15被按下时，从5到2的电路将被接通，此">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/10/5b964caaafd58.jpg">
 
 
 
@@ -114,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/12/矩阵按键/"/>
 
 
 
 
 
-  <title>我的博客</title>
+  <title>矩阵按键 | 我的博客</title>
   
 
 
@@ -139,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,9 +281,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -299,9 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/12/矩阵按键/" itemprop="url">矩阵按键</a></h1>
+          <h1 class="post-title" itemprop="name headline">矩阵按键</h1>
         
 
         <div class="post-meta">
@@ -373,9 +385,7 @@
       
 
       
-        
-          
-            <h1 id="4×4矩阵按键"><a href="#4×4矩阵按键" class="headerlink" title="4×4矩阵按键"></a>4×4矩阵按键</h1><h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。</p>
+        <h1 id="4×4矩阵按键"><a href="#4×4矩阵按键" class="headerlink" title="4×4矩阵按键"></a>4×4矩阵按键</h1><h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。</p>
 <h3 id="二、原理"><a href="#二、原理" class="headerlink" title="二、原理"></a>二、原理</h3><p><img src="https://i.loli.net/2018/09/10/5b964caaafd58.jpg" alt=""></p>
 <p>可以看到，矩阵键盘的原理十分简单，它有8个接口，5到8控制行，1到4控制列，它具体的工作方式是这样的：</p>
 <p>假设第5个串口所连接的IO口具有高电平的状态，当S15被按下时，从5到2的电路将被接通，此时2这个串口可以检测到高电平。所以说，要想检测S15是否被按下，只需把5串口所对应的IO口设置为高电平的输出，再检测2号输入串口是否接收到了高电平即可。</p>
@@ -495,8 +505,6 @@
 <h5 id="第二步：-1"><a href="#第二步：-1" class="headerlink" title="第二步："></a><strong>第二步：</strong></h5><p>直接在你需要的地方写上<code>key_scan();</code></p>
 <h5 id="第三步：-2"><a href="#第三步：-2" class="headerlink" title="第三步："></a><strong>第三步：</strong></h5><p>修改key.c文件下的<code>check(u32 k)；</code>的第三步的if里的语句，注意，可以用<code>keyword[c][d]</code>获取当前的键值。</p>
 
-          
-        
       
     </div>
     
@@ -506,316 +514,65 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜欢就捐赠我吧~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weichat.png" alt="Engou 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/模拟电路/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Engou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/05/模拟电路/" itemprop="url">模拟电路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T23:42:24+08:00">
-                2018-09-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/STM32/" rel="tag"># STM32</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>第一章 常用的导体器件</p>
-<h2 id="1-1半导体基础知识"><a href="#1-1半导体基础知识" class="headerlink" title="1.1半导体基础知识"></a>1.1半导体基础知识</h2><h3 id="1-1-1本征半导体"><a href="#1-1-1本征半导体" class="headerlink" title="1.1.1本征半导体"></a>1.1.1本征半导体</h3><p><strong>定义：</strong> <code>纯净</code> 的具有<code>晶体结构</code>的半导体</p>
-<p><code>纯净：无杂质</code>            <code>晶体结构：稳定的结构</code> </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/05/模拟电路/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/05/模拟电路/" rel="next" title="模拟电路">
+                <i class="fa fa-chevron-left"></i> 模拟电路
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/电路分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Engou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/电路分析/" itemprop="url">电路分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T22:09:18+08:00">
-                2018-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><strong>一个方向：关联和关联参考方向</strong></p>
-<p><strong>两个约束：基尔霍夫定理和元件VCR</strong> <code>Voltage Current Relation</code> </p>
-<p><strong>三个分析：网孔分析、节点分析、叠加原理</strong></p>
-<p><strong>四个元件：电阻元件、电流源、电压源、受控源</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/电路分析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -825,161 +582,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/大物实验/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Engou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/大物实验/" itemprop="url">大物实验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T20:57:43+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="第一部分：测量误差"><a href="#第一部分：测量误差" class="headerlink" title="第一部分：测量误差"></a>第一部分：测量误差</h1><h2 id="一、误差的分类"><a href="#一、误差的分类" class="headerlink" title="一、误差的分类"></a>一、误差的分类</h2><h3 id="（一）系统误差"><a href="#（一）系统误差" class="headerlink" title="（一）系统误差"></a>（一）系统误差</h3><p><strong>1.定义：</strong>在相同的实验条件下，对相同的实验对象进行重复测量，其误差的<code>绝对值</code>和<code>符号</code>都<code>保持恒定或以可以预知的方式变化</code>，这样的误差成为系统误差。[教材第5页]</p>
-<p><strong>2.来源：</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/大物实验/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -987,6 +594,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTU4OC8xNjExNQ"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1007,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1072,6 +697,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4×4矩阵按键"><span class="nav-number">1.</span> <span class="nav-text">4×4矩阵按键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、概述"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、原理"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、代码解析"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-引脚说明"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">1.引脚说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-头文件"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">2.头文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数组"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">3.数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-函数"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">4.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-按键程序初始化函数"><span class="nav-number">1.0.3.4.1.</span> <span class="nav-text">1.按键程序初始化函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#第一步："><span class="nav-number">1.0.3.4.1.1.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第二步："><span class="nav-number">1.0.3.4.1.2.</span> <span class="nav-text">第二步： </span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第三步："><span class="nav-number">1.0.3.4.1.3.</span> <span class="nav-text">第三步： </span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第四步："><span class="nav-number">1.0.3.4.1.4.</span> <span class="nav-text">第四步：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-GPIO电平初始化函数"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">2.GPIO电平初始化函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-总初始化函数"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">3.总初始化函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-GPIO激活函数"><span class="nav-number">1.0.3.7.</span> <span class="nav-text">4.GPIO激活函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-输入端读取函数"><span class="nav-number">1.0.3.8.</span> <span class="nav-text">5.输入端读取函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-单个按键检测函数"><span class="nav-number">1.0.3.9.</span> <span class="nav-text">5.单个按键检测函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一步：-1"><span class="nav-number">1.0.3.9.1.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三步：-1"><span class="nav-number">1.0.3.9.2.</span> <span class="nav-text">第三步：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第四步：-1"><span class="nav-number">1.0.3.9.3.</span> <span class="nav-text">第四步：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-检测循环函数"><span class="nav-number">1.0.3.10.</span> <span class="nav-text">6.检测循环函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-头文件"><span class="nav-number">1.0.3.10.1.</span> <span class="nav-text">5.头文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-宏定义"><span class="nav-number">1.0.3.10.2.</span> <span class="nav-text">1.宏定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-头文件-1"><span class="nav-number">1.0.3.10.3.</span> <span class="nav-text">2.头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、驱动的使用方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、驱动的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一步：-2"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二步：-1"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">第二步：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三步：-2"><span class="nav-number">1.0.4.0.3.</span> <span class="nav-text">第三步：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1222,6 +863,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1250,6 +895,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1596,26 +1252,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
