@@ -58,9 +58,9 @@
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="课堂笔记" scheme="http://yoursite.com/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="模拟电路" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="课堂笔记" scheme="http://yoursite.com/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -110,9 +110,9 @@
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大物实验" scheme="http://yoursite.com/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/"/>
-    
       <category term="课堂笔记" scheme="http://yoursite.com/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="大物实验" scheme="http://yoursite.com/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
