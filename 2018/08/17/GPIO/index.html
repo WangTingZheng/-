@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 </head>
 
 <body>
@@ -271,7 +271,19 @@
 </ul>
 <p><img src="https://i.loli.net/2018/08/12/5b6fbfe581be7.png" alt="PB4"></p>
 <p>举个例子：在我的144引脚的STM32F103VE中，PB4是第134号引脚，此引脚为I/O(输入输出引脚)，具有容忍5V高压的能力，主要功能是NJTRST，<a href="https://zhidao.baidu.com/question/684409963134390172.html" target="_blank" rel="external">NJTRST是仿真器调试时的JTAG对内核的调试复位信号，一般用于信号调试，建议不要用作他用。</a> 可选功能中的默认功能是SPI3_MISO，其中的重映射功能是PB4 / TIM3_CH1和SPI1_MISO</p>
-<h1 id="二、GPIO的几种模式"><a href="#二、GPIO的几种模式" class="headerlink" title="二、GPIO的几种模式"></a>二、GPIO的几种模式</h1><figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line">&#123; </div><div class="line">  GPIO_Mode_AIN = <span class="number">0x0</span>, 					    <span class="comment">/* 模拟输入 */</span></div><div class="line">  GPIO_Mode_IN_FLOATING = <span class="number">0x04</span>,				<span class="comment">/* 输入浮空 */</span></div><div class="line">  GPIO_Mode_IPD = <span class="number">0x28</span>,						<span class="comment">/* 输入下拉 */</span></div><div class="line">  GPIO_Mode_IPU = <span class="number">0x48</span>,						<span class="comment">/* 输入上拉 */</span></div><div class="line">      </div><div class="line">  GPIO_Mode_Out_OD = <span class="number">0x14</span>,					<span class="comment">/* 开漏输出 */</span></div><div class="line">  GPIO_Mode_Out_PP = <span class="number">0x10</span>,					<span class="comment">/* 推挽式输出 */</span></div><div class="line">  GPIO_Mode_AF_OD = <span class="number">0x1C</span>,					<span class="comment">/* 开漏复用 输出 */</span></div><div class="line">  GPIO_Mode_AF_PP = <span class="number">0x18</span>					<span class="comment">/* 推挽式复用 输出 */</span></div><div class="line">&#125;GPIOMode_TypeDef;</div></pre></td></tr></table></figure>
+<h1 id="二、GPIO的几种模式"><a href="#二、GPIO的几种模式" class="headerlink" title="二、GPIO的几种模式"></a>二、GPIO的几种模式</h1><pre class=" language-lang-c"><code class="language-lang-c">typedef enum
+{ 
+  GPIO_Mode_AIN = 0x0,                         /* 模拟输入 */
+  GPIO_Mode_IN_FLOATING = 0x04,                /* 输入浮空 */
+  GPIO_Mode_IPD = 0x28,                        /* 输入下拉 */
+  GPIO_Mode_IPU = 0x48,                        /* 输入上拉 */
+
+  GPIO_Mode_Out_OD = 0x14,                    /* 开漏输出 */
+  GPIO_Mode_Out_PP = 0x10,                    /* 推挽式输出 */
+  GPIO_Mode_AF_OD = 0x1C,                    /* 开漏复用 输出 */
+  GPIO_Mode_AF_PP = 0x18                    /* 推挽式复用 输出 */
+}GPIOMode_TypeDef;
+</code></pre>
 <h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="1-模拟输入-GPIO-Mode-AIN-0x0"><a href="#1-模拟输入-GPIO-Mode-AIN-0x0" class="headerlink" title="1.模拟输入(GPIO_Mode_AIN = 0x0)"></a>1.模拟输入<code>(GPIO_Mode_AIN = 0x0)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b71285a294f4.png" alt="模拟"></p>
 <h4 id="模拟输入：analog-input"><a href="#模拟输入：analog-input" class="headerlink" title="模拟输入：analog input"></a><strong>模拟输入</strong>：<strong>a</strong>nalog <strong>in</strong>put</h4><p>这个好理解，就是可以输入电压而非电平，输入的并非是0或1而是一个具体的电压值</p>
 <h3 id="2-浮空输入-GPIO-Mode-IN-FLOATING-0x04"><a href="#2-浮空输入-GPIO-Mode-IN-FLOATING-0x04" class="headerlink" title="2.浮空输入(GPIO_Mode_IN_FLOATING = 0x04)"></a>2.浮空输入<code>(GPIO_Mode_IN_FLOATING = 0x04)</code></h3><p><img src="https://i.loli.net/2018/08/13/5b717743e79a6.png" alt="浮空"></p>
@@ -312,11 +324,38 @@
 </blockquote>
 <p>该函数有两个形参，一个用来指明所要操作时钟的名称，一个选择开启还是关闭</p>
 <p>这个函数的时钟有以下的选项可选</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">RCC_APB2Periph_AFIO              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000001</span>)</div><div class="line">RCC_APB2Periph_GPIOA             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000004</span>)</div><div class="line">RCC_APB2Periph_GPIOB             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000008</span>)</div><div class="line">RCC_APB2Periph_GPIOC             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000010</span>)</div><div class="line">RCC_APB2Periph_GPIOD             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000020</span>)</div><div class="line">RCC_APB2Periph_GPIOE             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000040</span>)</div><div class="line">RCC_APB2Periph_GPIOF             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000080</span>)</div><div class="line">RCC_APB2Periph_GPIOG             ((<span class="keyword">uint32_t</span>)<span class="number">0x00000100</span>)</div><div class="line">RCC_APB2Periph_ADC1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000200</span>)</div><div class="line">RCC_APB2Periph_ADC2              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000400</span>)</div><div class="line">RCC_APB2Periph_TIM1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00000800</span>)</div><div class="line">RCC_APB2Periph_SPI1              ((<span class="keyword">uint32_t</span>)<span class="number">0x00001000</span>)</div><div class="line">RCC_APB2Periph_TIM8              ((<span class="keyword">uint32_t</span>)<span class="number">0x00002000</span>)</div><div class="line">RCC_APB2Periph_USART1            ((<span class="keyword">uint32_t</span>)<span class="number">0x00004000</span>)</div><div class="line">RCC_APB2Periph_ADC3              ((<span class="keyword">uint32_t</span>)<span class="number">0x00008000</span>)</div><div class="line">RCC_APB2Periph_TIM15             ((<span class="keyword">uint32_t</span>)<span class="number">0x00010000</span>)</div><div class="line">RCC_APB2Periph_TIM16             ((<span class="keyword">uint32_t</span>)<span class="number">0x00020000</span>)</div><div class="line">RCC_APB2Periph_TIM17             ((<span class="keyword">uint32_t</span>)<span class="number">0x00040000</span>)</div><div class="line">RCC_APB2Periph_TIM9              ((<span class="keyword">uint32_t</span>)<span class="number">0x00080000</span>)</div><div class="line">RCC_APB2Periph_TIM10             ((<span class="keyword">uint32_t</span>)<span class="number">0x00100000</span>)</div><div class="line">RCC_APB2Periph_TIM11             ((<span class="keyword">uint32_t</span>)<span class="number">0x00200000</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-lang-c"><code class="language-lang-c"> RCC_APB2Periph_AFIO              ((uint32_t)0x00000001)
+ RCC_APB2Periph_GPIOA             ((uint32_t)0x00000004)
+ RCC_APB2Periph_GPIOB             ((uint32_t)0x00000008)
+ RCC_APB2Periph_GPIOC             ((uint32_t)0x00000010)
+ RCC_APB2Periph_GPIOD             ((uint32_t)0x00000020)
+ RCC_APB2Periph_GPIOE             ((uint32_t)0x00000040)
+ RCC_APB2Periph_GPIOF             ((uint32_t)0x00000080)
+ RCC_APB2Periph_GPIOG             ((uint32_t)0x00000100)
+ RCC_APB2Periph_ADC1              ((uint32_t)0x00000200)
+ RCC_APB2Periph_ADC2              ((uint32_t)0x00000400)
+ RCC_APB2Periph_TIM1              ((uint32_t)0x00000800)
+ RCC_APB2Periph_SPI1              ((uint32_t)0x00001000)
+ RCC_APB2Periph_TIM8              ((uint32_t)0x00002000)
+ RCC_APB2Periph_USART1            ((uint32_t)0x00004000)
+ RCC_APB2Periph_ADC3              ((uint32_t)0x00008000)
+ RCC_APB2Periph_TIM15             ((uint32_t)0x00010000)
+ RCC_APB2Periph_TIM16             ((uint32_t)0x00020000)
+ RCC_APB2Periph_TIM17             ((uint32_t)0x00040000)
+ RCC_APB2Periph_TIM9              ((uint32_t)0x00080000)
+ RCC_APB2Periph_TIM10             ((uint32_t)0x00100000)
+ RCC_APB2Periph_TIM11             ((uint32_t)0x00200000)
+</code></pre>
 <p>第二项状态有ENABLE和DISABLE可选</p>
 <h4 id="3-2选择引脚"><a href="#3-2选择引脚" class="headerlink" title="3.2选择引脚"></a>3.2选择引脚</h4><h5 id="3-2-1先定义一个结构体"><a href="#3-2-1先定义一个结构体" class="headerlink" title="3.2.1先定义一个结构体"></a>3.2.1先定义一个结构体</h5><p><code>GPIO_InitTypeDef GPIO_InitStructure;</code> </p>
 <p>我们到stm32f10x_gpio.h中可以看到，ST官方的库函数对这个结构体的定义是这样的</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">uint16_t</span> GPIO_Pin;           </div><div class="line">  GPIOSpeed_TypeDef GPIO_Speed;  </div><div class="line">  GPIOMode_TypeDef GPIO_Mode;    </div><div class="line">&#125; GPIO_InitTypeDef;</div></pre></td></tr></table></figure>
+<pre class=" language-lang-c"><code class="language-lang-c">typedef struct
+{
+  uint16_t GPIO_Pin;           
+  GPIOSpeed_TypeDef GPIO_Speed;  
+  GPIOMode_TypeDef GPIO_Mode;    
+} GPIO_InitTypeDef;
+</code></pre>
 <p>可见该结构体主要有这个内容：</p>
 <blockquote>
 <p>GPIO_Pin：GPIO引脚，用来指引对某个IO接口进行操作</p>
@@ -328,9 +367,13 @@
 <p>GPIO_Speed_10MHz<br>GPIO_Speed_2MHz<br>GPIO_Speed_50MHz</p>
 </blockquote>
 <h5 id="3-2-2-初始化结构的值"><a href="#3-2-2-初始化结构的值" class="headerlink" title="3.2.2 初始化结构的值"></a>3.2.2 初始化结构的值</h5><p>就是分别对引脚、速度、模式经行初值赋值，比如说</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">GPIO_initTypeDef GPIO_initStructures;</div><div class="line">GPIO_initStructures.GPIO_Pin=GPIO_Pin_8;</div><div class="line">GPIO_initStructues.GPIO_Speed=GPIO_Speed_50MHz;</div><div class="line">GPIO_initStructures.GPIO_Mode=GPIO_Mode_OUT_PP;</div></pre></td></tr></table></figure>
-<h4 id="3-3-初始化GPIO"><a href="#3-3-初始化GPIO" class="headerlink" title="3.3 初始化GPIO"></a>3.3 初始化GPIO</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</div></pre></td></tr></table></figure>
-<p>其中的GPIOX是指引脚组名，比如说GPIOA</p>
+<pre class=" language-lang-C"><code class="language-lang-C">GPIO_initTypeDef GPIO_initStructures;
+GPIO_initStructures.GPIO_Pin=GPIO_Pin_8;
+GPIO_initStructues.GPIO_Speed=GPIO_Speed_50MHz;
+GPIO_initStructures.GPIO_Mode=GPIO_Mode_OUT_PP;
+</code></pre>
+<h4 id="3-3-初始化GPIO"><a href="#3-3-初始化GPIO" class="headerlink" title="3.3 初始化GPIO"></a>3.3 初始化GPIO</h4><pre><code>GPIO_Init(GPIOX, &amp;GPIO_InitStructure);
+</code></pre><p>其中的GPIOX是指引脚组名，比如说GPIOA</p>
 <h3 id="四、GPIO接口的使用"><a href="#四、GPIO接口的使用" class="headerlink" title="四、GPIO接口的使用"></a>四、GPIO接口的使用</h3><p>GPIO_SetBits 寄存器：BSRR </p>
 <p>GPIO_ResetBits 寄存器：BRR</p>
 <p>GPIO_WriteBit 寄存器：BSRR BRR </p>
