@@ -1,452 +1,577 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-    <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="undefined, hexo-theme-matery">
-    <meta name="description" content="只有健康和清醒的人，才能看到太阳升起，万物明亮。">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>我的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  <meta charset="utf-8">
+  
+  <title>讨论与思考 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="​       有人说写日记会让人变得不愿意和交流，容易固执己见，但我总觉得，有些东西是只能同自己讲的，因为能和自己讨论一个话题或愿意和自己讨论一个话题的人太少了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="讨论与思考">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/日记/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="​       有人说写日记会让人变得不愿意和交流，容易固执己见，但我总觉得，有些东西是只能同自己讲的，因为能和自己讨论一个话题或愿意和自己讨论一个话题的人太少了。">
+<meta property="og:updated_time" content="2018-08-18T02:58:35.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="讨论与思考">
+<meta name="twitter:description" content="​       有人说写日记会让人变得不愿意和交流，容易固执己见，但我总觉得，有些东西是只能同自己讲的，因为能和自己讨论一个话题或愿意和自己讨论一个话题的人太少了。">
+  
+    <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-</head>
-
 <body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
-<header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Engou</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">学习使我快乐</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
                         
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
                         
-                        <span class="logo-span">我的博客</span>
-                    </a>
-                </div>
-
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
-    
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>主页</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>档案</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
-    
-    <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
-        </a>
-    </li>
-
-</ul>
-
-<div class="side-nav" id="mobile-nav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">我的博客</div>
-        <div class="logo-desc">
-            
-            只有健康和清醒的人，才能看到太阳升起，万物明亮。
-            
-        </div>
-    </div>
-
-    <ul class="menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                主页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                档案
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-    </ul>
-
-    <div class="social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
-</div>
-
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <div class="description center-align post-title">
-                        讨论与思考
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
                     </div>
+                    
                 </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/STM32/" style="font-size: 20px;">STM32</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/军事/" style="font-size: 10px;">军事</a> <a href="/tags/大物实验/" style="font-size: 10px;">大物实验</a> <a href="/tags/张召忠/" style="font-size: 10px;">张召忠</a> <a href="/tags/战争/" style="font-size: 10px;">战争</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/模拟电路/" style="font-size: 10px;">模拟电路</a> <a href="/tags/电路分析/" style="font-size: 10px;">电路分析</a> <a href="/tags/课堂笔记/" style="font-size: 20px;">课堂笔记</a> <a href="/tags/课题笔记/" style="font-size: 10px;">课题笔记</a> <a href="/tags/逻辑/" style="font-size: 10px;">逻辑</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
             </div>
         </div>
-    </div>
+    </header>                
 </div>
-
-<main class="content">
-
-    <!-- 文章内容详情 -->
-    <div id="artDetail" class="container">
-        <div class="card">
-            <div class="card-content article-info">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Engou</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
                 
-                <div class="article-tag">
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Engou</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">学习使我快乐</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
                     
-                    <a href="/tags/日记/" target="_blank"><span class="chip bg-color">日记</span></a>
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                     
                 </div>
-                
-                <div class="post-info">
-                    
-                    <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/日常/" class="post-category" target="_blank">
-                        日常
-                    </a>
-                        
-                    </span>
-                    
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-日记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/17/日记/" class="article-date">
+      <time datetime="2018-08-17T06:03:05.686Z" itemprop="datePublished">2018-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      讨论与思考
+    </h1>
+  
 
-                    <span class="post-date">
-                        <i class="fa fa-clock-o fa-fw"></i>2018-08-17
-                    </span>
-                </div>
-            </div>
-            <hr>
-            <div class="card-content article-card-content">
-                <div id="articleContent">
-                    <p>​       <em>有人说写日记会让人变得不愿意和交流，容易固执己见，但我总觉得，有些东西是只能同自己讲的，因为能和自己讨论一个话题或愿意和自己讨论一个话题的人太少了。</em></p>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/日常/">日常</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>​       <em>有人说写日记会让人变得不愿意和交流，容易固执己见，但我总觉得，有些东西是只能同自己讲的，因为能和自己讨论一个话题或愿意和自己讨论一个话题的人太少了。</em></p>
 <a id="more"></a>
 <p>​以前对生活的微小操作往往会对现在和以后产生巨大的影响，这就是著名的<em><a href="https://baike.baidu.com/item/%E8%9D%B4%E8%9D%B6%E6%95%88%E5%BA%94/13502#viewPageContent" target="_blank" rel="external">蝴蝶效应</a></em>。乔布斯从来没有想过自己在斯坦福大学选修的一门书法课会帮助他创造出如此惊艳的作品——OSX。但不是每个人都怎么“幸运”，也并不是每个时候都这么“幸运”，当我们在某件事上遇到瓶颈的时候，往往感慨：要是我以前能怎么怎么样就好了。那何不未雨绸缪呢？与此同时，问题接踵而至：如何未雨绸缪？一种是跟随前辈的脚步，汲取前辈成功的经验，当然如果要从事字体设计的话最好跟随乔大师的脚步，从书法学起，但这一种做法目的性太强，太有“复制”的意味，并不是说这样不好，实际上除了英国，所有国家的工业革命都是从“复制”开始的，我只是说我们不应该仅仅满足与这样的方法论。我觉得我已经看过一个视频，讲的是微软为Windows 10制作Windows hero这一张著名壁纸的过程，令我感到意外的是，这张壁纸并不是P的，而是实际拍摄的，最近我还偶然看到Apple home的广告，这个广告十分炫酷，各种变换和光影交错十分令人着迷，但我还是没想到，这个广告的绝大部分场景也都是实拍的。曾经有人谈论到为何要用实拍而不用特效，我们先不讨论成本问题，显而易见的是，对于微软和苹果这样级别的公司，成本已经不是主要的考虑因素了。那为何他们仍要选择实拍呢？那就只能往效果方面考虑了。有人提到，倘若使用特效来做的话，作品的可能性就下降很多，我仔细一看Windows 10 的那张壁纸，确实有道理，一个由光影围绕的窗口周围，围绕着许多不规则的雾，我在对比其他人P出来了的壁纸，用我这个普通消费者的审美观来看，确实前者强很多。这样看来并不是所有伟大的作品都是由人类创造的，有许多是偶然的产物，古代炼丹被炸的道士，恐怕也不知道自己在那场改变人类历史的爆炸中添加了多少木炭和硫磺吧，说的更残酷一点，他甚至不知道他放了什么，就炸成了一场轰轰烈烈的技术革命。所以寻求有所成就也一样，很多时候我们是没有经验可循的，或者我们根本不知道有经验，所以我们就要适当地减少功利性去学习、接触一些事，到必要的时候，这些经历都会把人塑造成他该成为的样子。</p>
 <p> 我还想强调，这个世界没有我们想象地那么美好，但就是因为这样，我们的人生才有意义。有人说，如果人长生不老了，人生就失去了意义。我可能不太认同这个看法了。我记得我小时候曾经看过《七龙珠》里一个片段：悟空一行人与一个反派争夺龙珠，但不幸的是反派成功拿到了所有龙珠，所以反派向神龙许愿长生不老，神龙实现了他的愿望，就在这时，悟空一行人在最后关头打开了一个结界，不反派吸入了一个什么都没有的世界，我从反派无奈的呐喊中听出了他的绝望。那么问题来了，反派为什么期盼长生不老，为什么愿望实现了，还这么绝望呢？问题就出现在这个结界上。在没被结界吸入前，反派因为某种他认为不好的、无法抗拒的内外部条件，限制住了他，有可能他实力不足无法战胜比他强大地多的对手，想用不死之身实现绝地反击，有可能意识到了自己有一天会被死神打败而毫无反手之力，面对这么多的不美好，他决定用自己的力量和努力，改变这一切，但不幸的是这个结界里虽然没有他所想打败的一切，他可以用永久的时间来享受这般神的待遇，但他还是害怕、恐惧、极度拒绝进入到这个结界，为什么？恐怕他要的不是天下无敌的结果，而是天下无敌的过程，长生不老保证了他能一直、毫无悬念地打败一切他认为不美好的事物，结界的出现剥夺了他一切打败不美好事物的权力，只抛给他冷冰冰的结果，这时，长生不老更像一个诅咒，像一个凶狠却技术精湛的凌迟主刀手。只有具备打败一切不美好事物的胸怀，才能推动人的不断进步与发展，人的一生才会充满激情，等他回头看自己一生的时候，才不会因为虚度年华而感到悔恨。倘若我们真的生活在完美美好的乌托邦世界，我们是绝对不会幸福的。</p>
 <p>但从另外一个角度讲，人生不仅需要浪漫与热情，也需要理性与沉思。有人说，很多从农村来的孩子会因为强烈的自尊心变得固执己见，意识不到自己的问题或者不愿意承认自己的错误，不太会知恩图报，我这里并不是地域黑，实际上，城乡的人文和自然条件已经对生活在其中的人造成了影响，这些影响中有好有坏，今天我只想讲一讲坏影响中的其中一个，仅就自己而言，作自我批评。我一直认为大脑是一种非常神奇的东西，任何数据经过了这个系统，会输出不同的值，这些不同的值有可以用一些粗浅的理论来预测一番，毫无疑问，这样的模式是十分有创造性同时也是较为可控的。同样，自身的缺点或许也能够通过一些理论来分析它们的源头。这个时候，毫无立场地思考、批判就远比一腔热情更重要了。这个是每一个人应当具备的能力。倘若热情是力量巨大提供动力的火箭发动机的话，思考就是灵活、精确指示方向的陀螺仪。还有一点，我现在意识到，世界上好像并没有正确和错误，只有合适与不合适，我们应当在一定的情景下，以一定的角度思考问题。</p>
 
-                </div>
-                <hr/>
-
-                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-                <div class="reprint">
-                    <p>
-                        <span class="reprint-tip">转载请注明: </span>
-                        <a href="http://yoursite.com" class="b-link-green">我的博客</a>
-                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/08/17/日记/" class="b-link-green">讨论与思考</a>
-                    </p>
-                </div>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
             </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
         </div>
-
-        
-
-        
-        <div class="disqus-card card" data-aos="fade-up">
-    <div id="disqus_thread" class="card-content">
-        <noscript>Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
     </div>
-</div>
-
-<script type="text/javascript">
-    disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/08/17/日记/';
-        this.page.identifier = '/2018/08/17/日记/';
-        this.page.title = '讨论与思考';
-    };
-    let disqus_shortname = 'Engou';
-
-    (function () { // DON'T EDIT BELOW THIS LINE
-        let d = document, s = d.createElement('script');
-        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-        
-
-        
-
-<article id="articles" class="container prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
-            <div class="card">
-                <a href="/2018/08/17/蓝眼睛岛/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="蓝眼睛岛">
-                        
-                        <span class="card-title">蓝眼睛岛</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">逻辑的魅力总是想黑洞一样吸引着人们去探索，从祖母悖论到三国杀，人们总是沉浸在探索人类最困难未知的领域，为之花费大量时间。思考它们也能为我们解决很多问题。
- 今天是2018年8月17号，我在逛b站的时候看到这么一个有趣的视频
-
- 电脑浏览可能</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/有趣的问题/" class="post-category" target="_blank">
-                                    有趣的问题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/数学/" target="_blank">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                    <a href="/tags/逻辑/" target="_blank">
-                        <span class="chip bg-color">逻辑</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/08/17/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="如何配置hexo">
-                        
-                        <span class="card-title">如何配置hexo</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">
-
-本版本仅适用于Win环境本文关键字： Hexo绿色版，Hexo便携版，Hexo配置，Hexo，U盘
-
-
-Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Markdown 的所有功能；具有超快生成速度，让上</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                    技术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/教程/" target="_blank">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/17/日记/">讨论与思考</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Engou 的个人博客">Engou</a></p>
+        <p><span>发布时间:</span>2018年08月17日 - 14时03分</p>
+        <p><span>最后更新:</span>2018年08月18日 - 10时58分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/17/日记/" title="讨论与思考">http://yoursite.com/2018/08/17/日记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/17/日记/　　作者: Engou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/08/17/蓝眼睛岛/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          蓝眼睛岛
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何配置hexo</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-    </div>
-</main>
 
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: 'null',
+        client_secret: 'null',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/17/蓝眼睛岛/" title="上一篇: 蓝眼睛岛">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/08/17/hello-world/" title="下一篇: 如何配置hexo">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/矩阵按键/">矩阵按键</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/05/模拟电路/">模拟电路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/电路分析/">电路分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/大物实验/">大物实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/战争热中的冷思考——张召忠/">战争热中的冷思考——张召忠</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/GPIO/">GPIO的硬件情况与软件配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/插入视频/">在我的博客上插入b站视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/蓝眼睛岛/">蓝眼睛岛</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/日记/">讨论与思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/hello-world/">如何配置hexo</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Engou
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
 </footer>
 
-<div class="progress-bar"></div>
-
-
-<!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input" autofocus="">
-        </div>
-        <div id="searchResult"></div>
     </div>
-</div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
-<!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-double-up"></i>
-    </a>
-</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+  </div>
 </body>
 </html>

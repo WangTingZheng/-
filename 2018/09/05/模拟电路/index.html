@@ -1,234 +1,291 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-    <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="undefined, hexo-theme-matery">
-    <meta name="description" content="只有健康和清醒的人，才能看到太阳升起，万物明亮。">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>我的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  <meta charset="utf-8">
+  
+  <title>模拟电路 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一章 常用的导体器件
+1.1半导体基础知识1.1.1本征半导体定义： 纯净 的具有晶体结构的半导体
+纯净：无杂质            晶体结构：稳定的结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟电路">
+<meta property="og:url" content="http://yoursite.com/2018/09/05/模拟电路/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="第一章 常用的导体器件
+1.1半导体基础知识1.1.1本征半导体定义： 纯净 的具有晶体结构的半导体
+纯净：无杂质            晶体结构：稳定的结构">
+<meta property="og:image" content="https://i.loli.net/2018/09/05/5b8feb4ebd0f6.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/09/05/5b8ff170ad521.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/09/05/5b8ff92fdce69.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/09/05/5b8ff8524a15e.jpg">
+<meta property="og:updated_time" content="2018-09-20T12:49:57.277Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模拟电路">
+<meta name="twitter:description" content="第一章 常用的导体器件
+1.1半导体基础知识1.1.1本征半导体定义： 纯净 的具有晶体结构的半导体
+纯净：无杂质            晶体结构：稳定的结构">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/05/5b8feb4ebd0f6.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-</head>
-
 <body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
-<header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Engou</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">学习使我快乐</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
                         
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
                         
-                        <span class="logo-span">我的博客</span>
-                    </a>
-                </div>
-
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
-    
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>主页</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>档案</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
-    
-    <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
-        </a>
-    </li>
-
-</ul>
-
-<div class="side-nav" id="mobile-nav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">我的博客</div>
-        <div class="logo-desc">
-            
-            只有健康和清醒的人，才能看到太阳升起，万物明亮。
-            
-        </div>
-    </div>
-
-    <ul class="menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                主页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                档案
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-    </ul>
-
-    <div class="social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
-</div>
-
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <div class="description center-align post-title">
-                        模拟电路
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
                     </div>
+                    
                 </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/STM32/" style="font-size: 20px;">STM32</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/军事/" style="font-size: 10px;">军事</a> <a href="/tags/大物实验/" style="font-size: 10px;">大物实验</a> <a href="/tags/张召忠/" style="font-size: 10px;">张召忠</a> <a href="/tags/战争/" style="font-size: 10px;">战争</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/模拟电路/" style="font-size: 10px;">模拟电路</a> <a href="/tags/电路分析/" style="font-size: 10px;">电路分析</a> <a href="/tags/课堂笔记/" style="font-size: 20px;">课堂笔记</a> <a href="/tags/课题笔记/" style="font-size: 10px;">课题笔记</a> <a href="/tags/逻辑/" style="font-size: 10px;">逻辑</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
             </div>
         </div>
-    </div>
+    </header>                
 </div>
-
-<main class="content">
-
-    <!-- 文章内容详情 -->
-    <div id="artDetail" class="container">
-        <div class="card">
-            <div class="card-content article-info">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Engou</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
                 
-                <div class="article-tag">
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Engou</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">学习使我快乐</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
                     
-                    <a href="/tags/课堂笔记/" target="_blank"><span class="chip bg-color">课堂笔记</span></a>
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
                     
-                    <a href="/tags/模拟电路/" target="_blank"><span class="chip bg-color">模拟电路</span></a>
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                     
                 </div>
-                
-                <div class="post-info">
-                    
-                    <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/学习/" class="post-category" target="_blank">
-                        学习
-                    </a>
-                        
-                    </span>
-                    
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-模拟电路" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/05/模拟电路/" class="article-date">
+      <time datetime="2018-09-05T15:42:24.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模拟电路
+    </h1>
+  
 
-                    <span class="post-date">
-                        <i class="fa fa-clock-o fa-fw"></i>2018-09-05
-                    </span>
-                </div>
-            </div>
-            <hr>
-            <div class="card-content article-card-content">
-                <div id="articleContent">
-                    <p>第一章 常用的导体器件</p>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模拟电路/">模拟电路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/课堂笔记/">课堂笔记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>第一章 常用的导体器件</p>
 <h2 id="1-1半导体基础知识"><a href="#1-1半导体基础知识" class="headerlink" title="1.1半导体基础知识"></a>1.1半导体基础知识</h2><h3 id="1-1-1本征半导体"><a href="#1-1-1本征半导体" class="headerlink" title="1.1.1本征半导体"></a>1.1.1本征半导体</h3><p><strong>定义：</strong> <code>纯净</code> 的具有<code>晶体结构</code>的半导体</p>
 <p><code>纯净：无杂质</code>            <code>晶体结构：稳定的结构</code> </p>
 <a id="more"></a>
@@ -327,216 +384,298 @@
 <h5 id="4-扩散运动和漂移运动的动态平衡"><a href="#4-扩散运动和漂移运动的动态平衡" class="headerlink" title="4.扩散运动和漂移运动的动态平衡"></a>4.扩散运动和漂移运动的动态平衡</h5><p>在开始阶段，<strong>扩散运动速度快</strong>，<strong>扩散运动又使得内电场得到加强</strong>，间接加强了漂移运动，随着P区和N区的多子不懂发生复合，其浓度不断减低，<strong>扩散运动不断削弱</strong>。我们上面已经分析过了扩散运动与漂移运动<code>方向相反</code>，随着扩散运动不断减弱，漂移运动不断加强，它们会<strong>在一个时间点达到平衡</strong>，虽然此时两者还在进行，但这两个相反的运动一直在相互抵消，这就是我所说的<code>动态平衡</code>。此时，PN结正式形成。</p>
 <h4 id="二、PN结的单向导电性"><a href="#二、PN结的单向导电性" class="headerlink" title="二、PN结的单向导电性"></a>二、PN结的单向导电性</h4><h5 id="1-PN结两端加正向电压导通"><a href="#1-PN结两端加正向电压导通" class="headerlink" title="1.PN结两端加正向电压导通"></a>1.PN结两端加正向电压导通</h5><p>正向电压：</p>
 
-                </div>
-                <hr/>
-
-                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-                <div class="reprint">
-                    <p>
-                        <span class="reprint-tip">转载请注明: </span>
-                        <a href="http://yoursite.com" class="b-link-green">我的博客</a>
-                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/09/05/模拟电路/" class="b-link-green">模拟电路</a>
-                    </p>
-                </div>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
             </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
         </div>
-
-        
-
-        
-        <div class="disqus-card card" data-aos="fade-up">
-    <div id="disqus_thread" class="card-content">
-        <noscript>Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
     </div>
-</div>
-
-<script type="text/javascript">
-    disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/09/05/模拟电路/';
-        this.page.identifier = '/2018/09/05/模拟电路/';
-        this.page.title = '模拟电路';
-    };
-    let disqus_shortname = 'Engou';
-
-    (function () { // DON'T EDIT BELOW THIS LINE
-        let d = document, s = d.createElement('script');
-        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-        
-
-        
-
-<article id="articles" class="container prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
-            <div class="card">
-                <a href="/2018/09/12/矩阵按键/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="矩阵按键">
-                        
-                        <span class="card-title">矩阵按键</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">4×4矩阵按键一、概述4×4矩阵按键是一种由4排4列共16个可弹出式按键组成的按键组，矩阵按键利用单片机的IO口来识别当前按键的状态，能够使用户与单片机进行交互，比如说设定时钟的值，设定闹钟等。
-二、原理
-可以看到，矩阵键盘的原理十分简单，</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                    技术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/STM32/" target="_blank">
-                        <span class="chip bg-color">STM32</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/09/04/电路分析/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="电路分析">
-                        
-                        <span class="card-title">电路分析</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">一个方向：关联和关联参考方向
-两个约束：基尔霍夫定理和元件VCR Voltage Current Relation 
-三个分析：网孔分析、节点分析、叠加原理
-四个元件：电阻元件、电流源、电压源、受控源
-
-第一篇    总论和电阻电路的分析集</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/学习/" class="post-category" target="_blank">
-                                    学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/电路分析/" target="_blank">
-                        <span class="chip bg-color">电路分析</span>
-                    </a>
-                    
-                    <a href="/tags/课题笔记/" target="_blank">
-                        <span class="chip bg-color">课题笔记</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/09/05/模拟电路/">模拟电路</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Engou 的个人博客">Engou</a></p>
+        <p><span>发布时间:</span>2018年09月05日 - 23时42分</p>
+        <p><span>最后更新:</span>2018年09月20日 - 20时49分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/09/05/模拟电路/" title="模拟电路">http://yoursite.com/2018/09/05/模拟电路/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/05/模拟电路/　　作者: Engou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/09/12/矩阵按键/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          矩阵按键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/04/电路分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">电路分析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-    </div>
-</main>
 
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1半导体基础知识"><span class="toc-number">1.</span> <span class="toc-text">1.1半导体基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1本征半导体"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.1本征半导体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、半导体"><span class="toc-number">1.1.1.</span> <span class="toc-text">一、半导体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、热激发"><span class="toc-number">1.1.2.</span> <span class="toc-text">二、热激发</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-载流子：运载电荷的粒子称为载流子"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1.载流子：运载电荷的粒子称为载流子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-本征激发：半导体在热激发下产生自由电子和空穴的现象叫做本征激发"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.本征激发：半导体在热激发下产生自由电子和空穴的现象叫做本征激发</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-本征激发和复合的动态平衡"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">3.本征激发和复合的动态平衡</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-杂质导体"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2 杂质导体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、N型半导体"><span class="toc-number">1.2.1.</span> <span class="toc-text">一、N型半导体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、P型半导体"><span class="toc-number">1.2.2.</span> <span class="toc-text">二、P型半导体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、多子与少子"><span class="toc-number">1.2.3.</span> <span class="toc-text">三、多子与少子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-PN结"><span class="toc-number">1.3.</span> <span class="toc-text">1.1.3 PN结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、PN结的形成"><span class="toc-number">1.3.1.</span> <span class="toc-text">一、PN结的形成</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-浓度差引发扩散运动"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">1.浓度差引发扩散运动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-扩散运动导致空间电荷区的形成"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">2.扩散运动导致空间电荷区的形成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-空间电荷区内的内电场"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3.空间电荷区内的内电场</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-扩散运动和漂移运动的动态平衡"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">4.扩散运动和漂移运动的动态平衡</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、PN结的单向导电性"><span class="toc-number">1.3.2.</span> <span class="toc-text">二、PN结的单向导电性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-PN结两端加正向电压导通"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1.PN结两端加正向电压导通</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: 'null',
+        client_secret: 'null',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/09/12/矩阵按键/" title="上一篇: 矩阵按键">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/09/04/电路分析/" title="下一篇: 电路分析">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/矩阵按键/">矩阵按键</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/05/模拟电路/">模拟电路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/电路分析/">电路分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/大物实验/">大物实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/战争热中的冷思考——张召忠/">战争热中的冷思考——张召忠</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/GPIO/">GPIO的硬件情况与软件配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/插入视频/">在我的博客上插入b站视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/蓝眼睛岛/">蓝眼睛岛</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/日记/">讨论与思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/hello-world/">如何配置hexo</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Engou
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
 </footer>
 
-<div class="progress-bar"></div>
-
-
-<!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input" autofocus="">
-        </div>
-        <div id="searchResult"></div>
     </div>
-</div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
-<!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-double-up"></i>
-    </a>
-</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+  </div>
 </body>
 </html>

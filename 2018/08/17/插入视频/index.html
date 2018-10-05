@@ -1,234 +1,291 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-    <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="undefined, hexo-theme-matery">
-    <meta name="description" content="只有健康和清醒的人，才能看到太阳升起，万物明亮。">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>我的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  <meta charset="utf-8">
+  
+  <title>在我的博客上插入b站视频 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、问题的开端我们知道，有些时候在博客里添加一些视频是再好不过的事情了，但是我只试过插入图片，对插入视频这一种比较复杂的操作还一无所知。根据我的了解，markdown语法还兼容HTML语言，或许可以从这方面入手。
+在markdown文本里，如何输入视频呢？，我经过查阅资料，发现b站是有一个分享嵌入代码的功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在我的博客上插入b站视频">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/插入视频/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="一、问题的开端我们知道，有些时候在博客里添加一些视频是再好不过的事情了，但是我只试过插入图片，对插入视频这一种比较复杂的操作还一无所知。根据我的了解，markdown语法还兼容HTML语言，或许可以从这方面入手。
+在markdown文本里，如何输入视频呢？，我经过查阅资料，发现b站是有一个分享嵌入代码的功能">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b768f5139f7d.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b76904921556.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b7691347a3f1.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b76a33d3cdbe.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b76a3df39fb4.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b76a18253d19.png">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b76bc52bfe8f.png">
+<meta property="og:updated_time" content="2018-08-17T12:28:20.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在我的博客上插入b站视频">
+<meta name="twitter:description" content="一、问题的开端我们知道，有些时候在博客里添加一些视频是再好不过的事情了，但是我只试过插入图片，对插入视频这一种比较复杂的操作还一无所知。根据我的了解，markdown语法还兼容HTML语言，或许可以从这方面入手。
+在markdown文本里，如何输入视频呢？，我经过查阅资料，发现b站是有一个分享嵌入代码的功能">
+<meta name="twitter:image" content="https://i.loli.net/2018/08/17/5b768f5139f7d.png">
+  
+    <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-</head>
-
 <body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
-<header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Engou</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">学习使我快乐</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
                         
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
                         
-                        <span class="logo-span">我的博客</span>
-                    </a>
-                </div>
-
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
-    
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>主页</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>档案</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
-    
-    <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
-        </a>
-    </li>
-
-</ul>
-
-<div class="side-nav" id="mobile-nav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">我的博客</div>
-        <div class="logo-desc">
-            
-            只有健康和清醒的人，才能看到太阳升起，万物明亮。
-            
-        </div>
-    </div>
-
-    <ul class="menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                主页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                档案
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-    </ul>
-
-    <div class="social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
-</div>
-
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <div class="description center-align post-title">
-                        在我的博客上插入b站视频
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
                     </div>
+                    
                 </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/STM32/" style="font-size: 20px;">STM32</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/军事/" style="font-size: 10px;">军事</a> <a href="/tags/大物实验/" style="font-size: 10px;">大物实验</a> <a href="/tags/张召忠/" style="font-size: 10px;">张召忠</a> <a href="/tags/战争/" style="font-size: 10px;">战争</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/模拟电路/" style="font-size: 10px;">模拟电路</a> <a href="/tags/电路分析/" style="font-size: 10px;">电路分析</a> <a href="/tags/课堂笔记/" style="font-size: 20px;">课堂笔记</a> <a href="/tags/课题笔记/" style="font-size: 10px;">课题笔记</a> <a href="/tags/逻辑/" style="font-size: 10px;">逻辑</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
             </div>
         </div>
-    </div>
+    </header>                
 </div>
-
-<main class="content">
-
-    <!-- 文章内容详情 -->
-    <div id="artDetail" class="container">
-        <div class="card">
-            <div class="card-content article-info">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Engou</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
                 
-                <div class="article-tag">
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Engou</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">学习使我快乐</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
                     
-                    <a href="/tags/hexo/" target="_blank"><span class="chip bg-color">hexo</span></a>
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
                     
-                    <a href="/tags/教程/" target="_blank"><span class="chip bg-color">教程</span></a>
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                     
                 </div>
-                
-                <div class="post-info">
-                    
-                    <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/技术/" class="post-category" target="_blank">
-                        技术
-                    </a>
-                        
-                    </span>
-                    
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-插入视频" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/17/插入视频/" class="article-date">
+      <time datetime="2018-08-17T10:28:56.000Z" itemprop="datePublished">2018-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在我的博客上插入b站视频
+    </h1>
+  
 
-                    <span class="post-date">
-                        <i class="fa fa-clock-o fa-fw"></i>2018-08-17
-                    </span>
-                </div>
-            </div>
-            <hr>
-            <div class="card-content article-card-content">
-                <div id="articleContent">
-                    <h3 id="一、问题的开端"><a href="#一、问题的开端" class="headerlink" title="一、问题的开端"></a>一、问题的开端</h3><p>我们知道，有些时候在博客里添加一些视频是再好不过的事情了，但是我只试过插入图片，对插入视频这一种比较复杂的操作还一无所知。根据我的了解，markdown语法还兼容HTML语言，或许可以从这方面入手。</p>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="一、问题的开端"><a href="#一、问题的开端" class="headerlink" title="一、问题的开端"></a>一、问题的开端</h3><p>我们知道，有些时候在博客里添加一些视频是再好不过的事情了，但是我只试过插入图片，对插入视频这一种比较复杂的操作还一无所知。根据我的了解，markdown语法还兼容HTML语言，或许可以从这方面入手。</p>
 <p>在markdown文本里，如何输入视频呢？，我经过查阅资料，发现b站是有一个分享嵌入代码的功能</p>
 <a id="more"></a>
 <p><img src="https://i.loli.net/2018/08/17/5b768f5139f7d.png" alt="嵌入代码分享"></p>
@@ -264,215 +321,298 @@
 <p><a href="https://zhidao.baidu.com/question/982370213986027659.html" target="_blank" rel="external">怎么让HTML里的播放器居中</a></p>
 <p><a href="https://blog.csdn.net/ctlwy/article/details/54601865" target="_blank" rel="external">HTML5/CSS3手机自适应</a></p>
 
-                </div>
-                <hr/>
-
-                <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-                <div class="reprint">
-                    <p>
-                        <span class="reprint-tip">转载请注明: </span>
-                        <a href="http://yoursite.com" class="b-link-green">我的博客</a>
-                        <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                        <a href="/2018/08/17/插入视频/" class="b-link-green">在我的博客上插入b站视频</a>
-                    </p>
-                </div>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
             </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
         </div>
-
-        
-
-        
-        <div class="disqus-card card" data-aos="fade-up">
-    <div id="disqus_thread" class="card-content">
-        <noscript>Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
     </div>
-</div>
-
-<script type="text/javascript">
-    disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/08/17/插入视频/';
-        this.page.identifier = '/2018/08/17/插入视频/';
-        this.page.title = '在我的博客上插入b站视频';
-    };
-    let disqus_shortname = 'Engou';
-
-    (function () { // DON'T EDIT BELOW THIS LINE
-        let d = document, s = d.createElement('script');
-        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-        
-
-        
-
-<article id="articles" class="container prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
-            <div class="card">
-                <a href="/2018/08/17/GPIO/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="GPIO的硬件情况与软件配置">
-                        
-                        <span class="card-title">GPIO的硬件情况与软件配置</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">一、GPIO接口的情况1、数量与编号STM32F103VE-EK中的V储存着该芯片的引脚位数信息
-V代表本开发板有144个引脚，但需要注意的是，这144个引脚并非全都是GPIO引脚
-
-1.1 GPIO引脚的组从GPIOA 到GPIOG ，总</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                    技术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/STM32/" target="_blank">
-                        <span class="chip bg-color">STM32</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/08/17/蓝眼睛岛/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="蓝眼睛岛">
-                        
-                        <span class="card-title">蓝眼睛岛</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">逻辑的魅力总是想黑洞一样吸引着人们去探索，从祖母悖论到三国杀，人们总是沉浸在探索人类最困难未知的领域，为之花费大量时间。思考它们也能为我们解决很多问题。
- 今天是2018年8月17号，我在逛b站的时候看到这么一个有趣的视频
-
- 电脑浏览可能</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/有趣的问题/" class="post-category" target="_blank">
-                                    有趣的问题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/数学/" target="_blank">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                    <a href="/tags/逻辑/" target="_blank">
-                        <span class="chip bg-color">逻辑</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/17/插入视频/">在我的博客上插入b站视频</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Engou 的个人博客">Engou</a></p>
+        <p><span>发布时间:</span>2018年08月17日 - 18时28分</p>
+        <p><span>最后更新:</span>2018年08月17日 - 20时28分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/17/插入视频/" title="在我的博客上插入b站视频">http://yoursite.com/2018/08/17/插入视频/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/17/插入视频/　　作者: Engou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/08/17/GPIO/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          GPIO的硬件情况与软件配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/17/蓝眼睛岛/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">蓝眼睛岛</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-    </div>
-</main>
 
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、问题的开端"><span class="toc-number">1.</span> <span class="toc-text">一、问题的开端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、看似有用的解决方法"><span class="toc-number">2.</span> <span class="toc-text">二、看似有用的解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、尝试改进"><span class="toc-number">3.</span> <span class="toc-text">三、尝试改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、还不够完美"><span class="toc-number">4.</span> <span class="toc-text">四、还不够完美</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、尽所能优化"><span class="toc-number">5.</span> <span class="toc-text">五、尽所能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、最后的改进"><span class="toc-number">6.</span> <span class="toc-text">六、最后的改进</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: 'null',
+        client_secret: 'null',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/17/GPIO/" title="上一篇: GPIO的硬件情况与软件配置">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/08/17/蓝眼睛岛/" title="下一篇: 蓝眼睛岛">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/矩阵按键/">矩阵按键</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/05/模拟电路/">模拟电路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/电路分析/">电路分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/大物实验/">大物实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/战争热中的冷思考——张召忠/">战争热中的冷思考——张召忠</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/GPIO/">GPIO的硬件情况与软件配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/插入视频/">在我的博客上插入b站视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/蓝眼睛岛/">蓝眼睛岛</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/日记/">讨论与思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/hello-world/">如何配置hexo</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Engou
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/wangtingzheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:tingzheng.wang@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 2251985371" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a></div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
 </footer>
 
-<div class="progress-bar"></div>
-
-
-<!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input" autofocus="">
-        </div>
-        <div id="searchResult"></div>
     </div>
-</div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
-<!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-double-up"></i>
-    </a>
-</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+  </div>
 </body>
 </html>
