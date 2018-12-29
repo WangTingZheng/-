@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangtingzheng.top/about/index.html</loc>
+    
+    <lastmod>2018-12-29T02:56:37.366Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangtingzheng.top/2018/10/05/%E7%94%A8OpenMV%E5%AE%9E%E7%8E%B0%E5%BE%AA%E8%BF%B9/</loc>
     
     <lastmod>2018-10-21T09:56:30.779Z</lastmod>
@@ -9,16 +16,9 @@
   </url>
   
   <url>
-    <loc>http://wangtingzheng.top/STM32%E4%B8%AD%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE.html</loc>
+    <loc>http://wangtingzheng.top/2018/10/11/STM32%E4%B8%AD%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</loc>
     
     <lastmod>2018-10-14T03:28:46.539Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangtingzheng.top/about/index.html</loc>
-    
-    <lastmod>2018-10-06T08:39:47.849Z</lastmod>
     
   </url>
   
